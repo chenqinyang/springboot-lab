@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import qy.lab.jpa.LabRepository;
 import qy.lab.jpa.Person;
 
+import javax.servlet.http.HttpSession;
+
 @RestController
 public class RestSvcController {
 
@@ -12,8 +14,21 @@ public class RestSvcController {
     private LabRepository labRepository;
 
     @GetMapping("/hello")
-    String hello() {
-        return "Hello spring-boot.";
+    String hello(HttpSession session) {
+
+        if (null != session.getAttribute("sskey")) {
+            return (String) session.getAttribute("sskey");
+        } else {
+            return "Hello spring-boot.";
+        }
+    }
+
+    @GetMapping("/save")
+    String save(HttpSession session) {
+
+        session.setAttribute("sskey", "redis value ah!");
+
+        return "saved";
     }
 
     @GetMapping("/query/{id}")
