@@ -2,6 +2,7 @@ package qy.lab.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import qy.lab.AppConfig;
 import qy.lab.jpa.LabRepository;
 import qy.lab.jpa.Person;
 
@@ -11,10 +12,15 @@ import javax.servlet.http.HttpSession;
 public class RestSvcController {
 
     @Autowired
+    AppConfig appConfig;
+
+    @Autowired
     private LabRepository labRepository;
 
     @GetMapping("/hello")
     String hello(HttpSession session) {
+
+        System.out.println("++++Test: config env = " + this.appConfig.getEnv());
 
         if (null != session.getAttribute("sskey")) {
             return (String) session.getAttribute("sskey");
