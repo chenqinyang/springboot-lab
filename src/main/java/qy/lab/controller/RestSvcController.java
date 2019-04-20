@@ -37,6 +37,11 @@ public class RestSvcController {
         return "saved";
     }
 
+    @GetMapping("/env")
+    String env(HttpSession session) {
+        return this.appConfig.getEnv();
+    }
+
     @GetMapping("/query/{id}")
 //    @RequestMapping(value = "/query", method = RequestMethod.GET)
     String query(@PathVariable("id") Long id) {

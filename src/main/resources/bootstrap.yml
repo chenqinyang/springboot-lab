@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: lab
+  cloud:
+    config:
+      application: lab
+      fail-fast: true
+      uri: http://localhost:30000/config
+      profile: uat
+      label: dev
