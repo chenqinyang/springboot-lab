@@ -20,7 +20,7 @@ public class RestSvcController {
     @GetMapping("/hello")
     String hello(HttpSession session) {
 
-        System.out.println("++++Test: config env = " + this.appConfig.getEnv());
+        System.out.println("++++Test: config env = " + this.appConfig.getId());
 
         if (null != session.getAttribute("sskey")) {
             return (String) session.getAttribute("sskey");
@@ -37,9 +37,9 @@ public class RestSvcController {
         return "saved";
     }
 
-    @GetMapping("/env")
+    @GetMapping("/config")
     String env(HttpSession session) {
-        return this.appConfig.getEnv();
+        return this.appConfig.getId() + " | " + this.appConfig.getBranch() + " | " + this.appConfig.getProfile();
     }
 
     @GetMapping("/query/{id}")

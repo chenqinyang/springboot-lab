@@ -8,24 +8,31 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix="app")
 public class AppConfig {
-	private String env;
-	private Map<String, String> params;
+	private String id;
+	private String branch;
+	private String profile;
 
-	public String getEnv() {
-		return env;
+	public String getProfile() {
+		return profile;
 	}
 
-	public void setEnv(String env) {
-		this.env = env;
+	public void setProfile(String profile) {
+		this.profile = profile;
 	}
 
-	public Map<String, String> getParams() {
-		return params;
+	public String getId() {
+		return id;
 	}
 
-	public void setParams(Map<String, String> params) {
-		this.params = params;
+	public void setId(String id) {
+		this.id = id;
 	}
-	
-	
+
+	public String getBranch() {
+		return branch;
+	}
+
+	public void setBranch(String branch) {
+		this.branch = branch;
+	}
 }

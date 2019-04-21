@@ -18,6 +18,6 @@ public class Application {
 
 		AppConfig apc = cac.getBean(AppConfig.class);
 
-		System.out.println(apc.getParams());
+//		System.out.println(apc.getParams());
 	}
 }
