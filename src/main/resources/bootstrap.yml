@@ -5,6 +5,6 @@ spring:
     config:
       application: lab
       fail-fast: true
-      uri: http://localhost:30000/config
+      uri: http://ec2-54-218-70-75.us-west-2.compute.amazonaws.com:30000/config
       profile: uat
       label: dev
