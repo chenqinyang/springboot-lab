@@ -5,6 +5,6 @@ spring:
     config:
       application: lab
       fail-fast: true
-      uri: http://localhost:30000/config
+      uri: http://120.78.168.19:30000/config
       profile: uat
       label: dev

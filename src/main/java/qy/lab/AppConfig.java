@@ -3,9 +3,11 @@ package qy.lab;
 import java.util.Map;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
 @Component
+@RefreshScope
 @ConfigurationProperties(prefix="app")
 public class AppConfig {
 	private String id;
