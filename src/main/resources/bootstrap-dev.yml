@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: lab
+  cloud:
+    config:
+      application: lab
+      fail-fast: true
+      uri: http://ec2-54-218-70-75.us-west-2.compute.amazonaws.com:30000/config
+      profile: uat
+      label: master
