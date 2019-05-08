@@ -1,4 +1,4 @@
 app:
   id: 'local yml'
-  branch: 'dev'
-  profile: 'uat'
+  branch: 'classpath'
+  profile: 'default'
